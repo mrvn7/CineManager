@@ -1,0 +1,56 @@
+﻿@model Cinema_Teste.Filme
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<h3>Você tem certeza que deseja remover esse filme?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Elenco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Elenco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Diretor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diretor)
+        </dd>
+
+    </dl>
+
+    <br />
+    <br />
+
+    @using (Html.BeginForm(new { @style = "display:inline-block" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-danger" />
+        </div>
+    }
+
+    <br />
+
+    @using (Html.BeginForm("Index", "Filmes", FormMethod.Get))
+    {
+        <button type="submit" name="botaoVoltar" id="botao1" class="btn btn-info "> Voltar   </button>
+    }
+</div>

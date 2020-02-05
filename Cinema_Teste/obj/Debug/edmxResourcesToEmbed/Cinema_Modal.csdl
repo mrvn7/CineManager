@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CinemaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Filme">
+    <Key>
+      <PropertyRef Name="IdFilme" />
+    </Key>
+    <Property Name="IdFilme" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titulo" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Duracao" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Ano" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="TipoDeMidia" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Elenco" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Diretor" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="CinemaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Filme" EntityType="Self.Filme" />
+  </EntityContainer>
+</Schema>

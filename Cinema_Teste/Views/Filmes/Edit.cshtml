@@ -1,0 +1,84 @@
+﻿@model Cinema_Teste.Filme
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edite os campos</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.IdFilme)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Titulo, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Titulo, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Duracao, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Duracao, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @Html.ValidationMessageFor(model => model.Duracao, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Ano, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Ano, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @Html.ValidationMessageFor(model => model.Ano, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TipoDeMidia, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TipoDeMidia, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @Html.ValidationMessageFor(model => model.TipoDeMidia, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Elenco, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Elenco, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @Html.ValidationMessageFor(model => model.Elenco, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Diretor, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Diretor, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @Html.ValidationMessageFor(model => model.Diretor, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Salvar" class="btn btn-success" />
+
+        </div>
+    </div>
+
+
+    <div>
+        @Html.ActionLink("Voltar", "Index")
+    </div>
+
+</div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Cinema_Teste.Filme>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Meus Filmes</h2>
+
+@using (Html.BeginForm("Create", "Filmes", FormMethod.Get, new { @style = "display:inline-block " }))
+{
+    <button type="submit" name="botao1" id="botao1" class="btn btn-success glyphicon glyphicon-level-up"> Adicionar </button>
+}
+
+@using (Html.BeginForm("Index", "Filmes", FormMethod.Get, new { @style = "float: right" }))
+{ 
+    @Html.TextBox("procurar")<input type="submit" value="Procurar" class="btn btn-info"  />
+}
+
+<table class="table">
+    <tr>
+    
+    <th>
+        @Html.DisplayNameFor(model => model.Titulo)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Duracao)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Ano)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.TipoDeMidia)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Elenco)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Diretor)
+    </th>
+    <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duracao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ano)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoDeMidia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Elenco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diretor)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.IdFilme }, new { @class = "btn btn-warning", @style = "display:inline-block " }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.IdFilme }, new { @class = "btn btn-danger", @style = "display:inline-block " })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
