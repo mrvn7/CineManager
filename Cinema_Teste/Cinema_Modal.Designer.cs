@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Vini\source\repos\Cinema_Teste\Cinema_Teste\Cinema_Modal.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\mrvn7\source\repos\MVCMovies\Solution-.net-Meus-Filmes\Cinema_Teste\Cinema_Modal.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
