@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CinemaMVC
+namespace Cinema_Teste
 {
     using System;
     using System.Collections.Generic;
