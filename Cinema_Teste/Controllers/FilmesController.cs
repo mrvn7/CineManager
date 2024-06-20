@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using Cinema_Teste;
 
 namespace Cinema_Teste.Controllers
 {
@@ -30,14 +26,12 @@ namespace Cinema_Teste.Controllers
         public ActionResult Details(int? id)
         {
             if (id == null)
-            {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+
             Filme filme = db.Filme.Find(id);
+
             if (filme == null)
-            {
                 return HttpNotFound();
-            }
             return View(filme);
         }
 
@@ -66,14 +60,13 @@ namespace Cinema_Teste.Controllers
         public ActionResult Edit(int? id)
         {
             if (id == null)
-            {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+
             Filme filme = db.Filme.Find(id);
+
             if (filme == null)
-            {
                 return HttpNotFound();
-            }
+
             return View(filme);
         }
 
@@ -95,14 +88,13 @@ namespace Cinema_Teste.Controllers
         public ActionResult Delete(int? id)
         {
             if (id == null)
-            {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+
             Filme filme = db.Filme.Find(id);
+
             if (filme == null)
-            {
                 return HttpNotFound();
-            }
+
             return View(filme);
         }
 
@@ -120,9 +112,8 @@ namespace Cinema_Teste.Controllers
         protected override void Dispose(bool disposing)
         {
             if (disposing)
-            {
                 db.Dispose();
-            }
+
             base.Dispose(disposing);
         }
     }
